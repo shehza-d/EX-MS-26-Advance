@@ -1,7 +1,7 @@
 // Variable Scoping //p
 // Closure //p
 // lexical scoping //p
-// Modules //R
+// Modules //p
 // Object Methods (keys,values,freez,entries) //p
 // Exponentiation Operator //p
 // Optional chaining //p
@@ -11,12 +11,12 @@
 // Rest parameter //p
 // Spread Operator //p
 // Enhanced object literals //p
-// Iterators & For..of  
-// Ternary Operator 
-// Reduce
-// post and pre increment 
-// bigint
-// symbol
+// Iterators & For..of  //p
+// Ternary Operator //p
+// Reduce //p
+// post and pre increment //p
+// bigint //p
+// symbol //p
 
 
 
@@ -269,9 +269,9 @@
 // console.log(`your name is ${username} and your age is ${age}`);
 
 // console.log(`
-    
+
 //     dsdfsd
-    
+
 //     sdfdsf`);
 
 
@@ -282,7 +282,7 @@
 
 // function greetUser(username = "abdullah"){
 //     console.log(`hello ${username}`);
-    
+
 // }
 // greetUser("usman")
 
@@ -290,15 +290,187 @@
 
 // Enhanced object literals 
 
-// var fullname = "Abdullah"; 
-// var color = "Brown"; 
+// var fullname = "Abdullah";
+// var color = "Brown";
 // var age = 21;
 
 
 // const user = {
-//    fullname,
-//    color,
-//    age
+//     fullname,
+//     color,
+//     age
 // }
 
 // console.log(user);
+
+
+
+// const arr = [1, 2, 3, 4, 5, 6];
+
+// for (const element of arr) {
+//     console.log(element);
+// }
+
+
+
+// for (const key in user) {
+//     console.log(`${key}:  ${user[key]}`); 
+// }
+
+
+
+
+// Ternary Operator 
+
+// condition likhna ka aik or tareeqa.
+
+
+// const age = 19;
+
+// age >= 16 ?  console.log('gym ma admission miljayega') : console.log('admission nahi milaiga')
+
+// age >= 18 ? console.log('gym ma admission miljayega') : age >= 16 ?  console.log('500 zyada daa or ajaa gym') : 
+// console.log('admission nahi milaiga')
+
+// if (age >= 18) {
+//     console.log('gym ma admission miljayega');
+// } else if (age >= 16){
+//     console.log('500 zyada daa or ajaa gym');  
+// } else {
+//     console.log('admission nahi milaiga');
+
+// }
+
+// age >= 18 ? console.log('gym ma admission miljayega') :  age >= 16 ? 
+// console.log('500 zyada daa or ajaa gym') : console.log('admission nahi milaiga')
+
+
+
+
+// Reduce
+
+// callback function
+
+// const cartItems = [
+//     {
+//         name: "Laptop",
+//         price: 999.99
+//     },
+//     {
+//         name: "Smartphone",
+//         price: 799.99
+//     },
+//     {
+//         name: "Headphones",
+//         price: 199.99
+//     },
+//     {
+//         name: "Smartwatch",
+//         price: 149.99
+//     },
+//     {
+//         name: "Tablet",
+//         price: 299.99
+//     }
+// ];
+
+
+
+
+// products.map(function (item , index){
+//     console.log(item);
+
+// })
+
+
+// const num = [1, 2, 3, 4]
+
+// const total = num.reduce((acc , cVal)=>{
+//     console.log(acc , cVal)
+//     return acc + cVal
+// } , 0)
+
+// console.log(total);
+
+
+// let sum = 0
+// for(let i = 0; i < num.length; i++){
+//     sum += num[i];
+
+// }
+// console.log(sum);
+
+
+
+
+// const totalPrice = cartItems.reduce((acc , cval)=>{
+//     return acc + cval.price
+// } , 0)
+
+// console.log(totalPrice);
+
+
+
+
+// let num = 10;
+
+// console.log(num++);
+// console.log(++num);
+
+
+// console.log(num++ + num++ + ++num + num++);
+// console.log(10 + 11 + 13 + 13);
+
+
+
+// bigint
+
+// let num = BigInt(234890234890328490234903284902)
+// // let num1 = 39048329049032490324843242343242n;
+// // let num2 = 32423432423423423432432432423n;
+// // let num3 = 20;
+
+// // console.log(typeof num1);
+// console.log(num);
+
+
+// // console.log(num1 + num2);
+// console.log(num2 + num3);
+
+
+
+
+
+
+// symbol
+
+// unique value
+
+
+// let sym1 = Symbol('age');
+// let sym2 = Symbol('age');
+
+// // console.log(sym1 === sym2);
+
+// const user = {
+//     username: 'mabdullah',
+//     email: 'mabdullah2037@gmail.com',
+//     age: 20,
+//     [sym1]: 40
+// }
+
+// user.age = 30;
+// user[sym2] = 50
+
+
+// console.log(user);
+
+
+
+
+
+
+
+
+
+
