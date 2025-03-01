@@ -11,3 +11,14 @@ check krna ka liya k typescript download hogaya ha ya nahi
 tsc -v
 
 tsc app.ts -w
+
+
+Github topics
+
+Branches
+merging
+rebasing
+
+pull request
+fork
+opensource contribution
