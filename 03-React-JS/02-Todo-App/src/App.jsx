@@ -83,7 +83,7 @@
 //     setTitle('')
 //     setDescription('')
 
-    
+
 
 //   }
 //   return (
@@ -109,35 +109,136 @@
 // useref
 
 
-import React , {useRef} from 'react'
+// import React , {useRef} from 'react'
+
+// function App() {
+//   const title = useRef();
+//   const description = useRef();
+
+//   const addTodo = (event) => {
+//     event.preventDefault();
+//     console.log(title.current.value);
+//     console.log(description.current.value);
+
+//     title.current.value = ""
+//     description.current.value = ""
+
+//   }
+//   return (
+//     <>
+//       <h1>Todo App</h1>
+//       <form onSubmit={addTodo}>
+//         <input type="text" placeholder="title" ref={title} />
+//         <br /><br />
+//         <input  type="text" placeholder="description" ref={description} />
+//         <br /><br />
+//         <button>add Todo</button>
+//       </form>
+
+//       {/* <button onClick={()=> addTodo('abdullah')}>add</button> */}
+//     </>
+//   )
+// }
+
+// export default App
+
+// import React from 'react'
+// import { useState } from 'react'
+
+// function App() {
+//   const [show , setShow] = useState(false);
+
+//   return (
+//     <>
+//     <h1>Hello world</h1>
+//     <button onClick={()=>setShow(!show)}>{show ? 'hide' : 'show'}</button>
+//     {show ? <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam laboriosam quae earum animi impedit, nesciunt omnis aperiam doloremque cumque error nobis veniam reiciendis unde harum tenetur eius. Maxime, quod totam?</p> :null}
+//     </>
+//   )
+// }
+
+// export default App
+
+
+
+import React from 'react'
+import { useState } from 'react';
 
 function App() {
-  const title = useRef();
-  const description = useRef();
- 
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [todo, setTodo] = useState([])
+
+
   const addTodo = (event) => {
     event.preventDefault();
-    console.log(title.current.value);
-    console.log(description.current.value);
+    console.log(title);
+    console.log(description);
 
-    title.current.value = ""
-    description.current.value = ""
+    // todo.push({
+    //   title,
+    //   description,
+    //   id: Date.now()
+    // })
+    // setTodo([...todo])
 
+    setTodo([...todo, {
+      title,
+      description,
+      id: Date.now()
+    }])
+
+    setTitle('')
+    setDescription('')
+  }
+
+  const deleteTodo = (index) => {
+    console.log('todo deleted' , index)
+    todo.splice(index , 1);
+    setTodo([...todo]);
+  }
+  const editTodo = (index) => {
+    console.log('todo edited' , index)
+    const updatedValue = prompt('enter updated val');
+    if(updatedValue === ''){
+      alert('updated value is empty')
+      return
+    }
+    todo[index].title = updatedValue
+    setTodo([...todo]);
   }
   return (
     <>
       <h1>Todo App</h1>
       <form onSubmit={addTodo}>
-        <input type="text" placeholder="title" ref={title} />
+        <input onChange={(e) => setTitle(e.target.value)} value={title} type="text" placeholder='title' />
         <br /><br />
-        <input  type="text" placeholder="description" ref={description} />
+        <input onChange={(e) => setDescription(e.target.value)} value={description} type="text" placeholder='description' />
         <br /><br />
         <button>add Todo</button>
       </form>
 
-      {/* <button onClick={()=> addTodo('abdullah')}>add</button> */}
+      <div>
+        {todo.length > 0 ? todo.map((item, index) => {
+          return <div style={{
+            margin: '10px',
+            padding: '20px',
+            border: '1px solid black',
+            borderRadius: '20px'
+          }} key={item.id}>
+            <p>Title: {item.title}</p>
+            <p>description: {item.description}</p>
+            <button onClick={() => deleteTodo(index)}>delete</button>
+            <button onClick={() => editTodo(index)}>edit</button>
+          </div>
+        }) : <h1>No todo Found.</h1>}
+      </div>
     </>
   )
 }
 
 export default App
+
+
+// rendering
+// conditional rendering
