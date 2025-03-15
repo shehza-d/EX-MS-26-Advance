@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Card = (props) => {
+  // useEffect(()=>{
+  //   console.log("component mount");
+    
+  //   return ()=>{
+  //     console.log("component unmount");
+      
+  //   }
+  // } , [])
   return (
     <div style={styles.card}>
       <img
