@@ -18,6 +18,11 @@ const App = () => {
         setLoading(false)
       })
   }, [])
+
+  function shuffleArray(arr){
+    return arr
+    
+  }
   return (
     <>
       <h1>Quiz App</h1>
@@ -38,3 +43,15 @@ const App = () => {
 }
 
 export default App
+
+
+// scenario
+
+// noon.com 
+// material UI products
+// quiz app
+// typescript + advance js quiz
+
+// ELIMINATE
+
+
