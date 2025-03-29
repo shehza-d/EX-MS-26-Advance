@@ -1,0 +1,6 @@
+Quiz App
+React router dom
+redux toolkit
+Supabase (auth)
+use context & use memo
+React Hook Forms
