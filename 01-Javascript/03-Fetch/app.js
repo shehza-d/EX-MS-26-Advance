@@ -3,8 +3,6 @@
 // API
 // promises chaining
 
-
-
 // function getAdmission(age) {
 //     return new Promise((resolve, reject) => {
 //         setTimeout(() => {
@@ -16,7 +14,6 @@
 //         }, 1000);
 //     })
 // }
-
 
 // then catch
 // getAdmission(21)
@@ -42,20 +39,12 @@
 
 // func()
 
-
-
-
-
-
-
-
-
 // backend ka saath communicate kaisa krainga.
 // API krainga
 
 // fetch('https://jsonplaceholder.typicode.com/users')
 // .then((res)=>{
-//     return res.json()    
+//     return res.json()
 // }).then((res)=>{
 //     console.log(res);
 
@@ -63,9 +52,6 @@
 //     console.log(err);
 
 // })
-
-
-
 
 // async function getUsers() {
 //     try {
@@ -78,19 +64,6 @@
 //     }
 // }
 // getUsers()
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const div = document.querySelector('.container');
 // const loading = document.querySelector('.loading');
@@ -109,21 +82,8 @@
 
 //     })
 
-
-
-
-
-
-
-
-
-
-
-
-
 // https://www.npmjs.com/package/axios
 // <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-
 
 // const div = document.querySelector('.container');
 // const loadingSpinner = document.querySelector('.loading-spinner');
@@ -150,10 +110,7 @@
 //     loadingSpinner.className = "d-none"
 // })
 
-
-
 // clone https://weather-322.web.app/
-
 
 // const form = document.querySelector('#form');
 // const city = document.querySelector('#city');
@@ -172,11 +129,10 @@
 
 // })
 
-
 // axios('https://api.github.com/users/abdulmuqeet2005')
 // .then(res => {
 //     console.log(res.data);
 // }).catch(err => {
 //     console.log(err);
-    
+
 // })

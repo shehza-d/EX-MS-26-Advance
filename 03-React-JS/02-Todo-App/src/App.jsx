@@ -1,6 +1,5 @@
 // import About from "./About"
 
-
 // function App() {
 //   let username = "abdullah";
 //   let num = 20;
@@ -18,7 +17,6 @@
 // }
 
 // export default App
-
 
 // css kaisa lagani ha ==> alag sa file banao | inline
 // state ka concept
@@ -43,7 +41,6 @@
 //     setNum(num - 1);
 //   }
 
-
 //   return (
 //     <>
 //       <h1 style={{ textAlign: 'center' }}>Counter {num}</h1>
@@ -63,10 +60,6 @@
 
 // export default App
 
-
-
-
-
 // import React from 'react'
 
 // function App() {
@@ -82,8 +75,6 @@
 
 //     setTitle('')
 //     setDescription('')
-
-
 
 //   }
 //   return (
@@ -104,10 +95,8 @@
 
 // export default App
 
-
 // usestate
 // useref
-
 
 // import React , {useRef} from 'react'
 
@@ -159,16 +148,13 @@
 
 // export default App
 
-
-
-import React from 'react'
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 
 function App() {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [todo, setTodo] = useState([])
-
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [todo, setTodo] = useState([]);
 
   const addTodo = (event) => {
     event.preventDefault();
@@ -182,63 +168,86 @@ function App() {
     // })
     // setTodo([...todo])
 
-    setTodo([...todo, {
-      title,
-      description,
-      id: Date.now()
-    }])
+    setTodo([
+      ...todo,
+      {
+        title,
+        description,
+        id: Date.now(),
+      },
+    ]);
 
-    setTitle('')
-    setDescription('')
-  }
+    setTitle("");
+    setDescription("");
+  };
 
   const deleteTodo = (index) => {
-    console.log('todo deleted' , index)
-    todo.splice(index , 1);
+    console.log("todo deleted", index);
+    todo.splice(index, 1);
     setTodo([...todo]);
-  }
+  };
   const editTodo = (index) => {
-    console.log('todo edited' , index)
-    const updatedValue = prompt('enter updated val');
-    if(updatedValue === ''){
-      alert('updated value is empty')
-      return
+    console.log("todo edited", index);
+    const updatedValue = prompt("enter updated val");
+    if (updatedValue === "") {
+      alert("updated value is empty");
+      return;
     }
-    todo[index].title = updatedValue
+    todo[index].title = updatedValue;
     setTodo([...todo]);
-  }
+  };
   return (
     <>
       <h1>Todo App</h1>
       <form onSubmit={addTodo}>
-        <input onChange={(e) => setTitle(e.target.value)} value={title} type="text" placeholder='title' />
-        <br /><br />
-        <input onChange={(e) => setDescription(e.target.value)} value={description} type="text" placeholder='description' />
-        <br /><br />
+        <input
+          onChange={(e) => setTitle(e.target.value)}
+          value={title}
+          type="text"
+          placeholder="title"
+        />
+        <br />
+        <br />
+        <input
+          onChange={(e) => setDescription(e.target.value)}
+          value={description}
+          type="text"
+          placeholder="description"
+        />
+        <br />
+        <br />
         <button>add Todo</button>
       </form>
 
       <div>
-        {todo.length > 0 ? todo.map((item, index) => {
-          return <div style={{
-            margin: '10px',
-            padding: '20px',
-            border: '1px solid black',
-            borderRadius: '20px'
-          }} key={item.id}>
-            <p>Title: {item.title}</p>
-            <p>description: {item.description}</p>
-            <button onClick={() => deleteTodo(index)}>delete</button>
-            <button onClick={() => editTodo(index)}>edit</button>
-          </div>
-        }) : <h1>No todo Found.</h1>}
+        {todo.length > 0 ? (
+          todo.map((item, index) => {
+            return (
+              <div
+                style={{
+                  margin: "10px",
+                  padding: "20px",
+                  border: "1px solid black",
+                  borderRadius: "20px",
+                }}
+                key={item.id}
+              >
+                <p>Title: {item.title}</p>
+                <p>description: {item.description}</p>
+                <button onClick={() => deleteTodo(index)}>delete</button>
+                <button onClick={() => editTodo(index)}>edit</button>
+              </div>
+            );
+          })
+        ) : (
+          <h1>No todo Found.</h1>
+        )}
       </div>
     </>
-  )
+  );
 }
 
-export default App
-
+export default App;
 
 // rendering
 // conditional rendering

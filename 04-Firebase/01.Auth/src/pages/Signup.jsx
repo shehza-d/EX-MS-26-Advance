@@ -5,8 +5,8 @@ import { useNavigate } from "react-router";
 import Loader from "../components/Loader";
 
 export default function Signup() {
-  const [msg, setMsg] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
+  const [msg, setMsg] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -16,44 +16,39 @@ export default function Signup() {
     // console.log('event :>> ', event.target);
     // event.target wo elemet hota hy jisse event generate ho
 
-    setIsLoading(true)
+    setIsLoading(true);
 
     // 0 index per form ka phale child hoga
     const email = event.target.children[0].value;
     const password = event.target.children[1].value;
 
-
     if (!email || !password) {
-      setMsg('Please fill all fields')
-      setIsLoading(false)
+      setMsg("Please fill all fields");
+      setIsLoading(false);
 
-      return
+      return;
     }
-
 
     try {
+      await createUserWithEmailAndPassword(auth, email, password);
 
-      await createUserWithEmailAndPassword(auth, email, password)
+      setMsg("User Signup Successful");
 
-      setMsg('User Signup Successful')
-
-      event.target.reset();// empty form values
+      event.target.reset(); // empty form values
 
       // navigate("/");
-
     } catch (error) {
-      console.log("🚀 ~ Signup ~ error:", error)
+      console.log("🚀 ~ Signup ~ error:", error);
 
-      setMsg(error.message)
+      setMsg(error.message);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-
-  }
+  };
 
   return (
-    <div className="container">Signup
-
+    <div className="container">
+      Signup
       <form onSubmit={submitHandler}>
         {msg}
         <input className="border-amber-400 border-2" type="text" />
@@ -64,8 +59,7 @@ export default function Signup() {
           {isLoading ? <Loader width="w-5" height="h-5" /> : "Register"}
         </button>
       </form>
-
       {/* <h1 onClick={(e) => console.log('event :>> ', event.target)}>Hello</h1> */}
     </div>
-  )
+  );
 }

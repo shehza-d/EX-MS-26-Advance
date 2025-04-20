@@ -1,4 +1,4 @@
-import { Button } from "./components/ui/button"
+import { Button } from "./components/ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -8,8 +8,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "./components/ui/drawer"
-
+} from "./components/ui/drawer";
 
 const App = () => {
   return (
@@ -33,7 +32,7 @@ const App = () => {
         </DrawerContent>
       </Drawer>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

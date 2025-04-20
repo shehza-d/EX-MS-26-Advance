@@ -14,7 +14,7 @@
 // user = "usman"
 // let age:number = 20
 // let isLoggedIn:boolean = true
-// let fruits: string[] = ["asdsad" , "asdasd"] 
+// let fruits: string[] = ["asdsad" , "asdasd"]
 // console.log(user);
 // console.log(age);
 // console.log(isLoggedIn);
@@ -44,7 +44,7 @@
 // }
 // let city = {
 //     name: 'karachi',
-//     population: 240000000, 
+//     population: 240000000,
 // }
 // city.age = 20;
 // type User = {

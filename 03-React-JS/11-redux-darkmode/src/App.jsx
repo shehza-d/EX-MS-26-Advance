@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo, deleteTodo } from "./config/redux/reducers/todoSlice";
 import Testing from "./components/Testing";
-import ToggleButton from "./components/ToggleButton"
+import ToggleButton from "./components/ToggleButton";
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -19,7 +19,7 @@ const App = () => {
     dispatch(
       addTodo({
         title: input,
-      })
+      }),
     );
   };
 
@@ -27,17 +27,22 @@ const App = () => {
     dispatch(
       deleteTodo({
         index,
-      })
+      }),
     );
   };
 
   const editTodo = () => {};
 
   return (
-    <div style={{ backgroundColor: isDarkMode ? "black" : "white" ,color: isDarkMode ? "red" : "blue",height:"100vh"}}>
-     
-     <ToggleButton/>
-     
+    <div
+      style={{
+        backgroundColor: isDarkMode ? "black" : "white",
+        color: isDarkMode ? "red" : "blue",
+        height: "100vh",
+      }}
+    >
+      <ToggleButton />
+
       <h1>Todo App</h1>
       <input
         type="text"
@@ -58,7 +63,7 @@ const App = () => {
         })}
       </ol>
 
-      <Testing/>
+      <Testing />
     </div>
   );
 };

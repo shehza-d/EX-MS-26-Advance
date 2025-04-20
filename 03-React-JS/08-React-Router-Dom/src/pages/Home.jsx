@@ -24,35 +24,30 @@
 
 // export default App
 
-
 // // home
 // // about
 // // contact
 // // services
 
-
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-
-  function goToContact(){
+  function goToContact() {
     console.log("go to contact");
-    navigate('contact')
-    
+    navigate("contact");
   }
   return (
     <>
-    <div>Home</div>
-    <button onClick={goToContact}>contact</button>
+      <div>Home</div>
+      <button onClick={goToContact}>contact</button>
     </>
-  )
-}
+  );
+};
 
-export default Home
-
+export default Home;
 
 // daisy ui
 // dynamic

@@ -2,7 +2,6 @@
 // import Btn from './components/Btn'
 // import Card from './components/Card'
 
-
 // function App() {
 //   const [show , setShow] = useState(true)
 
@@ -31,26 +30,33 @@ function App() {
 
   useEffect(() => {
     console.log("app component mounted");
-
-  }, [counterTwo])
-
+  }, [counterTwo]);
 
   return (
     <>
       <h1>Hello world</h1>
-      <button onClick={() => setCounter(counter + 1)}>counter One {counter}</button> <br /><br />
-      <button onClick={() => setCounterTwo(counterTwo + 5)}>counter Two {counterTwo}</button><br /><br />
-      <button onClick={() => setShow(!show)}>{show ? 'hide' : 'show'}</button>
-      {show && <Card image="https://placehold.co/200/red/white" title="hello world" />}
+      <button onClick={() => setCounter(counter + 1)}>
+        counter One {counter}
+      </button>{" "}
+      <br />
+      <br />
+      <button onClick={() => setCounterTwo(counterTwo + 5)}>
+        counter Two {counterTwo}
+      </button>
+      <br />
+      <br />
+      <button onClick={() => setShow(!show)}>{show ? "hide" : "show"}</button>
+      {show && (
+        <Card image="https://placehold.co/200/red/white" title="hello world" />
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
 
 // mount pa koi specific
 // unmount pa koi specific
 // [] ka saath
 // without []
 // [] array ma state
-

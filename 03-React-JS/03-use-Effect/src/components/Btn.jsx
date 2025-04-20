@@ -19,27 +19,14 @@
 
 // export default Btn
 
+import React from "react";
 
-
-
-
-
-import React from 'react'
-
-function Btn({title , func}) {
-    return (
-        <>
-            <button onClick={func}>{title}</button>
-        </>
-    )
+function Btn({ title, func }) {
+  return (
+    <>
+      <button onClick={func}>{title}</button>
+    </>
+  );
 }
 
-export default Btn
-
-
-
-
-
-
-
-
+export default Btn;

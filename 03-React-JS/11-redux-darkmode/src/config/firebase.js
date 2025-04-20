@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "expertizo-1",
   storageBucket: "expertizo-1.firebasestorage.app",
   messagingSenderId: "275526068487",
-  appId: "1:275526068487:web:8cdd8c6d28564097853da2"
+  appId: "1:275526068487:web:8cdd8c6d28564097853da2",
 };
 
 // Initialize Firebase
