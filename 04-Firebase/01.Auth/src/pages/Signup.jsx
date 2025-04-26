@@ -30,8 +30,11 @@ export default function Signup() {
     }
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+     const response 
+     = await createUserWithEmailAndPassword(auth, email, password);
 
+     console.log('response',response);
+     
       setMsg("User Signup Successful");
 
       event.target.reset(); // empty form values
