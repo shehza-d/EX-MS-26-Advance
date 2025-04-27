@@ -1,56 +1,28 @@
-import { createBrowserRouter } from "react-router-dom";
-// import Layout from '../components/Layout'
-import Layout from "../Layout";
+import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Product from "../pages/Product";
+import Navbar from "../components/NavBar";
 
-// login se phale wale routes
-export const unProtectedRoutes = createBrowserRouter([
-  {
-    path: "",
-    element: <Layout />,
+export default function AppRouter() {
+  // const user = useSelector((state) => state.user);
+  // console.log("🚀 ~ AppRouter ~ user:", user)
 
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      // {
-      // 	path: 'about',
-      // 	element: <About />
-      // },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "Signup",
-        element: <Signup />,
-      },
-    ],
-  },
-]);
+  return (
+    <>
+      <Navbar />
 
-export const protectedRoutes = createBrowserRouter([
-  {
-    path: "",
-    element: <Layout />,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      // {
-      // 	path: 'about',
-      // 	element: <About />
-      // },
-      {
-        path: "product",
-        element: <Product />,
-      },
-    ],
-  },
-]);
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+
+        <Route path="/product" element={<Product />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </>
+  );
+}

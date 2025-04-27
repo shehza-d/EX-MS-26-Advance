@@ -9,9 +9,6 @@ const authSlice = createSlice({
     addUser: (state, action) => {
       state.user = action.payload;
     },
-    // deleteTodo: (state, action) => {
-    //   state.todo.splice(action.payload.index, 1);
-    // },
   },
 });
 

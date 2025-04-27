@@ -1,15 +1,11 @@
-import { signInWithEmailAndPassword  } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../lib/firebase";
 import { useState } from "react";
-import { useNavigate } from "react-router";
 import Loader from "../components/Loader";
-
 
 export default function Login() {
   const [msg, setMsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
-  const navigate = useNavigate();
 
   const submitHandler = async (event) => {
     event.preventDefault(); // prevent page refresh
@@ -31,16 +27,13 @@ export default function Login() {
     }
 
     try {
-     const response 
-     = await signInWithEmailAndPassword(auth, email, password);
+      const response = await signInWithEmailAndPassword(auth, email, password);
 
-     console.log('response',response);
-     
-      setMsg("User Login Successful");
+      //  console.log('response',response);
+
+      // setMsg("User Login Successful");
 
       event.target.reset(); // empty form values
-
-      navigate("/");
     } catch (error) {
       console.log("🚀 ~ Signup ~ error:", error);
 

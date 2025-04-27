@@ -1,4 +1,4 @@
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../lib/firebase";
 
 export default function AddPost() {
@@ -7,14 +7,15 @@ export default function AddPost() {
 
     const text = e.target.children[0].value;
     try {
-      const docRef = await addDoc(collection(db, "posts"), {
+      await addDoc(collection(db, "posts"), {
         content: text,
-        from: "Quaid e Azam",
+        from: "abdullah",
         likes: 815,
-        createdAt:new Date()
+        image:
+          "https://cometinsure.com/blog/wp-content/uploads/2024/08/Best-Fuel-Average-Cars-in-Pakistan.jpg",
+        isShareAble: true,
+        createdAt: serverTimestamp(),
       });
-
-      console.log("Document written with ID: ", docRef);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
