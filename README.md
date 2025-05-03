@@ -1,4 +1,4 @@
-# Expertizo 
+# Expertizo
 
 - [x] Typescript
 - [x] ES6
@@ -20,9 +20,34 @@
 - [ ] CSR ‘use client’
 - [ ] 1 Project
 - [ ] [Cloudinary](https://cloudinary.com/)
-- [ ] 
+- [ ]
 
 REACT NATIVE
+
+- [ ] RN CLI vs RN Expo: Pros & Cons
+- [ ] React Native Expo Setup
+- [ ] React Native Components (5)
+  - [ ] React Native View
+  - [ ] React Native Picker
+  - [ ] React Native Text
+  - [ ] React Native Alert
+  - [ ] React Native Image
+- [ ] React Native Components (5)
+
+  - [ ] React Native Modal
+  - [ ] React Native Webview
+  - [ ] React Native Switch
+  - [ ] React Native Status Bar
+  - [ ] React Native Flat List
+
+- [ ] Expo Camera
+- [ ] Expo Image Picker
+- [ ] Expo Accelerometer
+- [ ] Expo Mapview & Realtime Location
+- [ ] Linking of libraries
+- [ ] React Native CLI
+- [ ] Expo NetInfo
+
 
 
 
