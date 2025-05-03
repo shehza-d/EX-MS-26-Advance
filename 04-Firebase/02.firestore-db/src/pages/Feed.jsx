@@ -7,6 +7,8 @@ import {
   query,
   limit,
   orderBy,
+  deleteDoc,
+  doc,
 } from "firebase/firestore";
 import { db } from "../lib/firebase";
 import { useEffect, useState } from "react";
@@ -21,7 +23,7 @@ export default function Feed() {
       const q = query(
         collection(db, "posts"),
         orderBy("createdAt", "desc"),
-        limit(60),
+        limit(60)
       );
 
       onSnapshot(q, (querySnapshot) => {
@@ -47,6 +49,14 @@ export default function Feed() {
           {index + 1} <h1>{post.content}</h1>
           <p>{post.from}</p>
           <p>likes: {post.likes}</p>
+          <button
+            className="p-2 bg-red-400"
+            onClick={async () => {
+              await deleteDoc(doc(db, "posts", post.id));
+            }}
+          >
+            delete
+          </button>
         </div>
       ))}
     </>

@@ -6,6 +6,7 @@ export default function AddPost() {
     e.preventDefault();
 
     const text = e.target.children[0].value;
+
     try {
       await addDoc(collection(db, "posts"), {
         content: text,
