@@ -1,5 +1,3 @@
-
-
 ```
 npx create-next-app
 ```

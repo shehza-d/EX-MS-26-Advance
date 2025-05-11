@@ -1,11 +1,11 @@
-- ayan 
-- abdullah iqbal
-- teerath
-- m rohan 
-- m muqeet
-- abdul wahab
-- bilal
-- yusuf
-- ezan
-- farukh
-- sudais
+- [x] ayan (https://github.com/M-Ayyan-coder/Ecommerce-Website/tree/main)
+- [ ] abdullah iqbal
+- [ ] teerath
+- [x] m rohan (https://github.com/Rohankhan2004/The-Croc-Hub)
+- [x] m muqeet (https://github.com/abdulmuqeet2005/E-Commerce-Website)
+- [ ] abdul wahab
+- [ ] bilal
+- [ ] yusuf
+- [ ] ezan
+- [ ] farukh
+- [ ] sudais

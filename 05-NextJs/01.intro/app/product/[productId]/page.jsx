@@ -14,6 +14,7 @@ export default async function Page({ params }) {
       <Image
         src={result.data.images[0]}
         width={300}
+        // className="w-6"
         height={300}
         alt={"my title"}
       />
