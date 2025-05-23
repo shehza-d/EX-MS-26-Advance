@@ -9,35 +9,34 @@
 
 ### NextJs
 
-- [ ] [Nextjs vs CRA (React App)](https://docs.google.com/presentation/d/1G_rBEFw9ttvZOBsLtPwzMqwDk-j0E7Y3/edit#slide=id.g2983195c3b0_3_48)
-- [ ] [SSR vs CSR](https://prismic.io/blog/nextjs-ssr-vs-ssg)
+- [x] [Nextjs vs CRA (React App)](https://docs.google.com/presentation/d/1G_rBEFw9ttvZOBsLtPwzMqwDk-j0E7Y3/edit#slide=id.g2983195c3b0_3_48)
+- [x] [SSR vs CSR](https://prismic.io/blog/nextjs-ssr-vs-ssg)
 - [ ] [Defining Static](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) & [Dynamic Route](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)
 - [x] [Link & Navigation](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating)
-- [ ] [Data Fetching, Caching, and Revalidating](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating)
-- [ ] [Loading UI](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)
-- [ ] [Error Handling](https://nextjs.org/docs/app/building-your-application/routing/error-handling)
+- [x] [Data Fetching, Caching, and Revalidating](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating)
+- [x] [Loading UI](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)
+- [x] [Error Handling](https://nextjs.org/docs/app/building-your-application/routing/error-handling)
 - [x] [Image Component](https://nextjs.org/docs/app/building-your-application/optimizing/images)
-- [ ] CSR ‘use client’
-- [ ] 1 Project
+- [x] CSR ‘use client’
+- [x] 1 Project
 - [ ] [Cloudinary](https://cloudinary.com/)
-- [ ]
 
 REACT NATIVE
 
-- [ ] RN CLI vs RN Expo: Pros & Cons
-- [ ] React Native Expo Setup
-- [ ] React Native Components (5)
-  - [ ] React Native View
+- [x] RN CLI vs RN Expo: Pros & Cons
+- [x] React Native Expo Setup
+- [x] React Native Components (5)
+  - [x] React Native View
   - [ ] React Native Picker
-  - [ ] React Native Text
-  - [ ] React Native Alert
-  - [ ] React Native Image
+  - [x] React Native Text
+  - [x] React Native Alert
+  - [x] React Native Image
 - [ ] React Native Components (5)
 
   - [ ] React Native Modal
   - [ ] React Native Webview
   - [ ] React Native Switch
-  - [ ] React Native Status Bar
+  - [x] React Native Status Bar
   - [ ] React Native Flat List
 
 - [ ] Expo Camera
@@ -47,7 +46,3 @@ REACT NATIVE
 - [ ] Linking of libraries
 - [ ] React Native CLI
 - [ ] Expo NetInfo
-
-
-
-
