@@ -4,7 +4,7 @@
 - [x] ES6
 - [x] Firebase
 - [x] ReactJs
-- [ ] NextJs
+- [x] NextJs
 - [ ] React Native
 
 ### NextJs
