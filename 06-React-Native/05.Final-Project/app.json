@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "login",
-    "slug": "login",
+    "name": "Shehzad Yango",
+    "slug": "SD Yango",
+    "description": "Final App Expertizo EX MS 26 Advance / an app to track your Yango rides.",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "login",
+    "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -14,10 +15,12 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#90D1CA"
       },
+      "package": "com.shehzad.yango",
       "edgeToEdgeEnabled": true
     },
+
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -36,8 +39,9 @@
         {
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "resizeMode": "cover",
+          "backgroundColor": "#90D1CA",
+          "dark": { "backgroundColor": "#232323" }
         }
       ]
     ],
