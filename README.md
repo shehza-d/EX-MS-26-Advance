@@ -31,7 +31,7 @@ REACT NATIVE
   - [x] React Native Text
   - [x] React Native Alert
   - [x] React Native Image
-- [ ] React Native Components (5)
+- [x] React Native Components (5)
 
   - [x] React Native Modal
   - [x] React Native [Webview](https://docs.expo.dev/versions/latest/sdk/webview/)
@@ -39,12 +39,14 @@ REACT NATIVE
   - [x] React Native Status Bar
   - [x] React Native Flat List
 
-- [ ] Auth with [Firebase](https://docs.expo.dev/guides/using-firebase/#using-firebase-js-sdk)
+- [x] Auth with [Firebase](https://docs.expo.dev/guides/using-firebase/#using-firebase-js-sdk)
 
-- [ ] Expo Camera
+- [x] Expo Camera
 - [ ] Expo Image Picker
 - [ ] Expo Accelerometer
-- [ ] Expo [Mapview](https://docs.expo.dev/versions/latest/sdk/map-view/) & [Realtime Location](https://docs.expo.dev/versions/latest/sdk/location/)
-- [ ] Linking of libraries
+- [x] Expo [Mapview](https://docs.expo.dev/versions/latest/sdk/map-view/) & [Realtime Location](https://docs.expo.dev/versions/latest/sdk/location/)
+- [x] Linking of libraries
 - [ ] React Native CLI
 - [ ] Expo NetInfo
+
+- [ ] React Native Paper
