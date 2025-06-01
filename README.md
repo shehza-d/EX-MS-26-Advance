@@ -39,10 +39,12 @@ REACT NATIVE
   - [x] React Native Status Bar
   - [x] React Native Flat List
 
+- [ ] Auth with [Firebase](https://docs.expo.dev/guides/using-firebase/#using-firebase-js-sdk)
+
 - [ ] Expo Camera
 - [ ] Expo Image Picker
 - [ ] Expo Accelerometer
-- [ ] Expo Mapview & Realtime Location
+- [ ] Expo [Mapview](https://docs.expo.dev/versions/latest/sdk/map-view/) & [Realtime Location](https://docs.expo.dev/versions/latest/sdk/location/)
 - [ ] Linking of libraries
 - [ ] React Native CLI
 - [ ] Expo NetInfo
