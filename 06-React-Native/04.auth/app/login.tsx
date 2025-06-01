@@ -12,13 +12,12 @@ export default function Login() {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log("🚀 ~ .then ~ userCredential:", userCredential);
-        router.replace("/");
+        router.replace("/"); // wapas back nhi hota
       })
       .catch((error) => {
-        console.log("🚀 ~ handleLogin ~ error:", error)
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        Alert.alert('Login Failed',errorMessage);
+        console.log("🚀 ~ handleLogin ~ error:", error);
+
+        Alert.alert("Login Failed", error.message);
       });
   };
   return (
@@ -26,13 +25,15 @@ export default function Login() {
       <Text>Login</Text>
 
       <TextInput
+        placeholder="Email"
         onChange={(e) => setEmail(e.nativeEvent.text)}
-        inputMode="text"
+        inputMode="email"
         style={{ borderColor: "red", borderWidth: 2 }}
       />
       <TextInput
         onChange={(e) => setPassword(e.nativeEvent.text)}
         inputMode="text"
+        secureTextEntry={true}
         style={{ borderColor: "red", borderWidth: 2 }}
       />
 

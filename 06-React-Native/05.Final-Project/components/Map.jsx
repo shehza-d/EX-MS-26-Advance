@@ -7,54 +7,40 @@ import {
   View,
   Text,
 } from "react-native";
-import * as Location from "expo-location";
 import { useSelector } from "react-redux";
 import { decodePolyline } from "@/lib/decodePolyline";
+import { useLocation } from "@/hooks/useLocation";
+import { API_KEY } from "@/lib/constants";
 
 export default function Map() {
-  const [location, setLocation] = useState(null);
+  const { location } = useLocation();
+
   const [errorMsg, setErrorMsg] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [encodedPolyline, setEncodedPolyline] = useState(null);
-
-  useEffect(() => {
-    async function getCurrentLocation() {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== "granted") {
-        setErrorMsg("Permission to access location was denied");
-        return;
-      }
-
-      let currentLocation = await Location.getCurrentPositionAsync({});
-      console.log(currentLocation);
-      setLocation(currentLocation);
-      setLoading(false);
-    }
-
-    getCurrentLocation();
-  }, []);
+  const [distance, setDistance] = useState(null);
 
   // get data from redux
   const destinationLocation = useSelector((state) => state.location.location);
-  console.log("destination location ==>", destinationLocation);
 
   // get direction
   const getDirection = async () => {
-    console.log("get direction");
+    // we are sending our own location to API
     const origin = `${location.coords.latitude},${location.coords.longitude}`;
+
+    // jidher jana hy
     const destination = `${destinationLocation.lat},${destinationLocation.lng}`;
-    const apiKey = "AlzaSyjxycRs-ZT6rvRfGkLh_5HeYfNz6AAWHFG";
-    const url = `https://maps.gomaps.pro/maps/api/directions/json?origin=${origin}&destination=${destination}&key=${apiKey}`;
+
+    const url = `https://maps.gomaps.pro/maps/api/directions/json?origin=${origin}&destination=${destination}&key=${API_KEY}`;
 
     try {
       const response = await fetch(url);
-      const json = await response.json();
-      console.log(json);
+      const rasta = await response.json();
 
-      // console.log('decode ==> ' , decodePolyline(json.routes[0].overview_polyline.points));
+      setDistance(rasta.routes[0].legs[0]);
 
-      if (json.routes.length) {
-        setEncodedPolyline(json.routes[0].overview_polyline.points);
+      if (rasta.routes.length) {
+        setEncodedPolyline(rasta.routes[0].overview_polyline.points);
       }
     } catch (error) {
       console.error(error);
@@ -63,9 +49,12 @@ export default function Map() {
 
   return (
     <View style={styles.container}>
+      <Text>
+        {distance?.distance?.text} {distance?.duration?.text}
+      </Text>
       {errorMsg && <Text>{errorMsg}</Text>}
-      {loading && <ActivityIndicator size="large" color="#00ff00" />}
-      {location && (
+      {loading && <ActivityIndicator size="large" color="#90D1CA" />}
+      {location ? (
         <MapView
           style={styles.map}
           initialRegion={{
@@ -75,14 +64,6 @@ export default function Map() {
             longitudeDelta: 0.005,
           }}
         >
-          <Marker
-            coordinate={{
-              latitude: location.coords.latitude,
-              longitude: location.coords.longitude,
-            }}
-            title={"my current location"}
-            description={"expertizo university"}
-          />
           {destinationLocation && (
             <View>
               <Marker
@@ -97,27 +78,23 @@ export default function Map() {
           )}
           {encodedPolyline && (
             <View>
+              {/* direction ky path ki lines hyn ye */}
               <Polyline
                 coordinates={decodePolyline(encodedPolyline)}
-                strokeColor="#764abc" // black color
+                strokeColor="#90D1CA" // black color
                 strokeWidth={6}
               />
-              {/* <Polyline
-                            coordinates={[
-                                { latitude: location.coords.latitude, longitude: location.coords.longitude },
-                                { latitude: destinationLocation.lat, longitude: destinationLocation.lng }
-                            ]}
-                            strokeColor="#764abc" // black color
-                            strokeWidth={6}
-                        /> */}
             </View>
           )}
         </MapView>
+      ) : (
+        <Text>Permission required</Text>
       )}
+
       <Button
         onPress={getDirection}
         title="Get Direction"
-        color="#841584"
+        color="#90D1CA"
         accessibilityLabel="Learn more about this purple button"
       />
     </View>
@@ -130,8 +107,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: "100%",
-    height: "90%",
+    height: "80%",
   },
 });
-
-// redux

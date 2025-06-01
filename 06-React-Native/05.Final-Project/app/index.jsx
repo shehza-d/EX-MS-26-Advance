@@ -7,16 +7,18 @@ import Map from "@/components/Map";
 import RideScreen from "@/components/RideScreen";
 
 export default function Index() {
+  // agar login nhi tw login screen per redirect kardo
+  // agar login tw user ki info console per print kardo
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const uid = user.uid;
-        console.log(uid);
+        console.log("🚀 ~ onAuthStateChanged ~ user:", user);
       } else {
-        router.push("/login");
+        router.replace("/login");
       }
     });
   }, []);
+
   return (
     <View style={styles.container}>
       <Map />

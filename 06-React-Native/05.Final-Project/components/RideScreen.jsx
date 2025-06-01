@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   View,
   TextInput,
@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import { useDispatch } from "react-redux";
 import { setLocation } from "@/redux/reducers/locationSlice";
+import { API_KEY } from "@/lib/constants";
 
 // Image
 import carIcon from "../assets/icons/car.png";
@@ -20,7 +21,11 @@ import motorbikeIcon from "../assets/icons/motorbike.png";
 import rickshawIcon from "../assets/icons/rickshaw.png";
 
 export default function RideBookingScreen() {
-  const [destination, setDestination] = useState("");
+  const [destinationQuery, setDestinationQuery] = useState("");
+  console.log(
+    "🚀 ~ RideBookingScreen ~ setDestinationQuery:",
+    destinationQuery
+  );
   const [predictions, setPredictions] = useState([]);
 
   // dispatch for global state
@@ -35,16 +40,13 @@ export default function RideBookingScreen() {
 
   // fetch locations from https://app.gomaps.pro/
 
-  const apiKey = "AlzaSyjxycRs-ZT6rvRfGkLh_5HeYfNz6AAWHFG";
-
-  const fetchAutocomplete = async (query) => {
+  const rideBooked = async (destinationQuery) => {
+    console.log("🚀 ~ fetchAutocomplete ~ destinationQuery:", destinationQuery);
     try {
       const response = await fetch(
-        `https://maps.gomaps.pro/maps/api/place/textsearch/json?query=${query}&key=${apiKey}`
+        `https://maps.gomaps.pro/maps/api/place/textsearch/json?query=${destinationQuery}&key=${API_KEY}`
       );
       const data = await response.json();
-      console.log("🚀 ~ fetchAutocomplete ~ data:", data)
-      console.log(data.results);
 
       setPredictions(data.results);
     } catch (error) {
@@ -52,16 +54,9 @@ export default function RideBookingScreen() {
     }
   };
 
-  // ride booked
-  const rideBooked = async () => {
-    console.log(destination);
-    await fetchAutocomplete(destination);
-  };
-
   // select destination
   const selectDestination = (item) => {
-    // setPredictions([]);
-    console.log(item.geometry.location);
+    console.log(item);
     dispatch(setLocation(item.geometry.location));
   };
 
@@ -69,9 +64,11 @@ export default function RideBookingScreen() {
     <KeyboardAvoidingView style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Destination"
-        value={destination}
-        onChangeText={setDestination}
+        placeholder="DestinationQuery"
+        value={destinationQuery}
+        onChange={(e) => setDestinationQuery(e.nativeEvent.text)}
+        onSubmitEditing={rideBooked}
+        returnKeyType="search"
       />
       {predictions?.length > 0 && (
         <ScrollView style={styles.predictionsContainer}>
@@ -103,7 +100,7 @@ export default function RideBookingScreen() {
           style={styles.slider}
         />
       </View>
-      <Button title="Book Ride" onPress={rideBooked} />
+      <Button title="Book Ride" color={"#90D1CA"} onPress={rideBooked} />
     </KeyboardAvoidingView>
   );
 }

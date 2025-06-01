@@ -50,7 +50,6 @@ export default function App() {
           // showsIndoors={true}
           zoomEnabled={true}
           mapType="terrain"
-
           // onRegionChange={}
         >
           {markers.map((item) => (
